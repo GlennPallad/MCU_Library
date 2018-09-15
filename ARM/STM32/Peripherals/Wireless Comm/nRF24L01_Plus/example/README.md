@@ -7,6 +7,8 @@ NOTE: LED and FreeRTOS codes were not provided, but this doesn't affect transmis
 LED codes are very simple, you can write LED codes according to your PCB by yourselves.<br>
 Download FreeRTOS codes from its [web site](www.freertos.org), and here is how to [Creating a New FreeRTOS Project from Scratch](http://blog.leanote.com/post/glennpallad/fa0dbe25ed28).
 
+You can find all configuration options in *nrf24l01p.h*, modify `User_Configurations` part in *nrf24l01p.h* to meet your needs, you don't need to modify *nrf24l01p.c* if you just want to use one-to-one simplex transmission function.
+
 # Hookups
 ## TX
 | MCU | nRF24L01+ |
