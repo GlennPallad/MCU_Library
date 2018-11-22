@@ -3,11 +3,11 @@
 *main.c*
 
 ```C
-#include "glenn_rcc.h"
-#include "glenn_gpio.h"
-#include "glenn_nvic.h"
-#include "glenn_usart.h"
-#include "glenn_spi.h"
+#include "wulfric_rcc.h"
+#include "wulfric_gpio.h"
+#include "wulfric_nvic.h"
+#include "wulfric_usart.h"
+#include "wulfric_spi.h"
 #include "W25Q64.h"
 
 int main(int argc, char const *argv[])
@@ -32,10 +32,10 @@ int main(int argc, char const *argv[])
 ```
 
 <br>
-*glenn_rcc.c*
+*wulfric_rcc.c*
 
 ```C
-#include "glenn_rcc.h"
+#include "wulfric_rcc.h"
 
 void RCC_Configuration(void){
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
@@ -48,11 +48,11 @@ void RCC_Configuration(void){
 ```
 
 <br>
-*glenn_gpio.c*
+*wulfric_gpio.c*
 
 ```C
-#include "glenn_gpio.h"
-#include "glenn_spi.h"
+#include "wulfric_gpio.h"
+#include "wulfric_spi.h"
 
 void GPIO_Configuration(void){
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -85,10 +85,10 @@ void GPIO_Configuration(void){
 ```
 
 <br>
-*glenn_nvic.c*
+*wulfric_nvic.c*
 
 ```C
-#include "glenn_nvic.h"
+#include "wulfric_nvic.h"
 
 /**
  * @brief This is a setting example, where EXTI0_IRQn, EXTI15_10_IRQn were
@@ -109,10 +109,10 @@ void NVIC_Configuration(void){
 ```
 
 <br>
-*glenn_spi.c*
+*wulfric_spi.c*
 
 ```C
-#include "glenn_spi.h"
+#include "wulfric_spi.h"
 
 void SPI_Configuration(void){
 	deselect_SPI1_NSS();

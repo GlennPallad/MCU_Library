@@ -1,11 +1,11 @@
 /**
  ******************************************************************************
- * @file   glenn_usart.c
- * @author Glenn Pallad
- * @version    V0.8.0_Alpha
- * @date   August 28, 2018
- * @brief  This file provides all functions for configuring USART1 in 
- * STM32F10x and sending strings.
+ * @file 		wulfirc_usart.c
+ * @author 		Wulfric Lee
+ * @version 	V0.8.0_Alpha
+ * @date 		August 28, 2018
+ * @brief 		This file provides all functions for configuring USART1 in 
+ * 				STM32F10x and sending strings.
  ******************************************************************************
  * @attention
  *
@@ -29,11 +29,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * <h2><center>COPYRIGHT &copy; 2018 GLENN PALLAD </center></h2>
+ * <h2><center>COPYRIGHT &copy; 2018 WULFRIC LEE </center></h2>
  ******************************************************************************
  */
 
-#include "glenn_usart.h"
+#include "wulfirc_usart.h"
 
 /**
  * @brief Configure mode of USART1.

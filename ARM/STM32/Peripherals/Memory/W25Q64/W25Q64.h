@@ -3,7 +3,7 @@
 
 #include "stm32f10x.h"
 
-#include "glenn_spi.h"
+#include "wulfric_spi.h"
 
 // #define sFLASH_ID 0xEF3015 /*!< W25X16 */
 // #define sFLASH_ID 0xEF4015 /*!< W25Q16 */

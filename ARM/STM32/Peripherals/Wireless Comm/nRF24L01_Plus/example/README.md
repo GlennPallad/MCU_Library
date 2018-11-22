@@ -1,3 +1,6 @@
+# This example isn't finished!
+Estimated time of finish: Jan, 2019
+
 # Example Illustration
 This is an example for nrf24l01+(includes TX and RX).
 

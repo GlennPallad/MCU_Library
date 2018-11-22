@@ -1,10 +1,11 @@
 /**
  ******************************************************************************
- * @file   glenn_tim.h
- * @author Glenn Pallad
- * @version    V0.8.0_Alpha
- * @date   August 28, 2018
- * @brief  This header file of glenn_tim.c.
+ * @file 		wulfric_tim.c
+ * @author 		Wulfric Lee
+ * @version 	V0.8.0_Alpha
+ * @date 		August 28, 2018
+ * @brief 		This file provides all functions for configuring TIM in 
+ * 				STM32F10x and sending strings.
  ******************************************************************************
  * @attention
  *
@@ -28,15 +29,27 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * <h2><center>COPYRIGHT &copy; 2018 GLENN PALLAD </center></h2>
+ * <h2><center>COPYRIGHT &copy; 2018 WULFRIC LEE </center></h2>
  ******************************************************************************
  */
 
-#ifndef GLENN_TIM_H
-#define GLENN_TIM_H
+#include "wulfric_tim.h"
 
-#include "stm32f10x.h"
-
-void TIM_Configuration(void);
-
-#endif
+/**
+ * @brief Configure mode of TIMs.
+ * @param None
+ * @retval None
+ */
+void TIM_Configuration(void){
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+	/*!< TIM6 */
+	TIM_TimeBaseStructure.TIM_Prescaler = 71;
+	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+	TIM_TimeBaseStructure.TIM_Period = 1000;
+	// TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
+	// TIM_TimeBaseStructure.TIM_RepetitionCounter = 0;
+	TIM_TimeBaseInit(TIM6, &TIM_TimeBaseStructure);
+	TIM_ClearFlag(TIM6, TIM_FLAG_Update);
+	TIM_ITConfig(TIM6, TIM_IT_Update, ENABLE);
+	TIM_Cmd(TIM6, DISABLE); 	/*!< Set ENABLE to start. */
+}

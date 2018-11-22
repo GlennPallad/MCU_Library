@@ -1,7 +1,7 @@
 /**
  ******************************************************************************
  * @file 		nrf24l01p.c
- * @author 		Glenn Pallad
+ * @author 		Wulfric Lee
  * @version 	V0.8.0_Alpha
  * @date 		August 28, 2018
  * @brief 		This file is nrf24l01p driver.
@@ -28,14 +28,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * <h2><center>COPYRIGHT &copy; 2018 GLENN PALLAD </center></h2>
+ * <h2><center>COPYRIGHT &copy; 2018 WULFRIC LEE </center></h2>
  ******************************************************************************
  */
 	
 #include "nrf24l01p.h"
 
-#include "glenn_spi.h"
-#include "glenn_usart.h"
+#include "wulfric_spi.h"
+#include "wulfric_usart.h"
 
 static uint64_t tx_addr = BIT_TX_ADDR;
 static uint64_t rx_addr_p0 = BIT_RX_ADDR_P0;

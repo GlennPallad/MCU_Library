@@ -1,7 +1,7 @@
 /**
  ******************************************************************************
  * @file 		nrf24l01p.h
- * @author 		Glenn Pallad
+ * @author 		Wulfric Lee
  * @version 	V0.8.0_Alpha
  * @date 		August 28, 2018
  * @brief 		This file is header of nrf24l01p.c.
@@ -28,7 +28,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * <h2><center>COPYRIGHT &copy; 2018 GLENN PALLAD </center></h2>
+ * <h2><center>COPYRIGHT &copy; 2018 WULFRIC LEE </center></h2>
  ******************************************************************************
  */
 

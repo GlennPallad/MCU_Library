@@ -1,10 +1,10 @@
 /**
  ******************************************************************************
- * @file 		glenn_rcc.c
- * @author 		Glenn Pallad
+ * @file 		wulfric_gpio.c
+ * @author 		Wulfric Lee
  * @version 	V0.8.0_Alpha
  * @date 		August 30, 2018
- * @brief 		This file is RCC driver.
+ * @brief 		This file is GPIO driver.
  ******************************************************************************
  * @attention
  *
@@ -28,24 +28,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * <h2><center>COPYRIGHT &copy; 2018 GLENN PALLAD </center></h2>
+ * <h2><center>COPYRIGHT &copy; 2018 WULFRIC LEE </center></h2>
  ******************************************************************************
  */
 
-#include "glenn_rcc.h"
+#include "wulfric_gpio.h"
 
 /**
- * @brief This is a setting example, where GPIOA, GPIOC, AFIO, USART1 and SPI1
- * 		RCCs were enabled, modify this to meet your needs.
+ * @brief This is a setting example, where GPIOA Pin 0, GPIOC Pin 13 were
+ * 		enabled, two EXTIs were attached, modify this to meet your needs.
  */
-void RCC_Configuration(void){
-	/*!< APB2Periph */
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI1, ENABLE);
-	/*!< APB1Periph */
-	// RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM6, ENABLE);
-	// RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM7, ENABLE);
+void GPIO_Configuration(void){
+	GPIO_InitTypeDef GPIO_InitStructure;
+	// KEY1
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	// KEY2
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+	GPIO_Init(GPIOC, &GPIO_InitStructure);
+	// EXTI
+	GPIO_EXTILineConfig(GPIO_PortSourceGPIOA, GPIO_PinSource0);
+	GPIO_EXTILineConfig(GPIO_PortSourceGPIOC, GPIO_PinSource13);
 }

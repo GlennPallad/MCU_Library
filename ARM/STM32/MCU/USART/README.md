@@ -6,10 +6,10 @@ function will occupies the processor until transmission finished.<br>
 *main.c*
 ```C
 #include "stm32f10x.h"
-#include "glenn_rcc.h"
-#include "glenn_gpio.h"
-#include "glenn_nvic.h"
-#include "glenn_usart.h"
+#include "wulfric_rcc.h"
+#include "wulfric_gpio.h"
+#include "wulfric_nvic.h"
+#include "wulfric_usart.h"
 
 int main(int argc, char const *argv[])
 {

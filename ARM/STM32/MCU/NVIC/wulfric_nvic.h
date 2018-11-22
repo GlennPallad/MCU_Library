@@ -1,10 +1,10 @@
 /**
  ******************************************************************************
- * @file 		glenn_gpio.h
- * @author 		Glenn Pallad
+ * @file 		wulfric_nvic.h
+ * @author 		Wulfric Lee
  * @version 	V0.8.0_Alpha
  * @date 		August 30, 2018
- * @brief 		This file is header of glenn_gpio.c.
+ * @brief 		This file is header of wulfric_nvic.c.
  ******************************************************************************
  * @attention
  *
@@ -28,15 +28,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * <h2><center>COPYRIGHT &copy; 2018 GLENN PALLAD </center></h2>
+ * <h2><center>COPYRIGHT &copy; 2018 WULFRIC LEE </center></h2>
  ******************************************************************************
  */
 
-#ifndef GLENN_GPIO_H
-#define GLENN_GPIO_H
+#ifndef WULFRIC_NVIC_H
+#define WULFRIC_NVIC_H
 
 #include "stm32f10x.h"
 
-void GPIO_Configuration(void);
+void NVIC_Configuration(void);
 
 #endif

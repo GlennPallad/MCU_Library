@@ -1,10 +1,10 @@
 /**
  ******************************************************************************
- * @file 		glenn_gpio.c
- * @author 		Glenn Pallad
+ * @file 		wulfirc_usart.h
+ * @author 		Wulfric Lee
  * @version 	V0.8.0_Alpha
- * @date 		August 30, 2018
- * @brief 		This file is GPIO driver.
+ * @date 		August 28, 2018
+ * @brief 		This header file of wulfirc_usart.c.
  ******************************************************************************
  * @attention
  *
@@ -28,29 +28,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * <h2><center>COPYRIGHT &copy; 2018 GLENN PALLAD </center></h2>
+ * <h2><center>COPYRIGHT &copy; 2018 WULFIRC LEE </center></h2>
  ******************************************************************************
  */
 
-#include "glenn_gpio.h"
+#ifndef WULFIRC_USART_H
+#define WULFIRC_USART_H
 
-/**
- * @brief This is a setting example, where GPIOA Pin 0, GPIOC Pin 13 were
- * 		enabled, two EXTIs were attached, modify this to meet your needs.
- */
-void GPIO_Configuration(void){
-	GPIO_InitTypeDef GPIO_InitStructure;
-	// KEY1
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-	GPIO_Init(GPIOA, &GPIO_InitStructure);
-	// KEY2
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-	GPIO_Init(GPIOC, &GPIO_InitStructure);
-	// EXTI
-	GPIO_EXTILineConfig(GPIO_PortSourceGPIOA, GPIO_PinSource0);
-	GPIO_EXTILineConfig(GPIO_PortSourceGPIOC, GPIO_PinSource13);
-}
+#include "stm32f10x.h"
+
+void USART_Configuration(void);
+void USART_SendString(USART_TypeDef* USARTx, char * str);
+
+#endif

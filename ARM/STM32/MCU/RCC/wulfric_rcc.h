@@ -1,10 +1,10 @@
 /**
  ******************************************************************************
- * @file   glenn_usart.h
- * @author Glenn Pallad
- * @version    V0.8.0_Alpha
- * @date   August 28, 2018
- * @brief  This header file of glenn_usart.c.
+ * @file 		wulfric_rcc.h
+ * @author 		Wulfric Lee
+ * @version 	V0.8.0_Alpha
+ * @date 		August 30, 2018
+ * @brief 		This file is header of wulfric_rcc.c.
  ******************************************************************************
  * @attention
  *
@@ -28,16 +28,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * <h2><center>COPYRIGHT &copy; 2018 GLENN PALLAD </center></h2>
+ * <h2><center>COPYRIGHT &copy; 2018 WULFRIC LEE </center></h2>
  ******************************************************************************
  */
 
-#ifndef GLENN_USART_H
-#define GLENN_USART_H
+#ifndef WULFRIC_RCC_H
+#define WULFRIC_RCC_H
 
 #include "stm32f10x.h"
 
-void USART_Configuration(void);
-void USART_SendString(USART_TypeDef* USARTx, char * str);
+void RCC_Configuration(void);
 
 #endif

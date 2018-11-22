@@ -1,10 +1,10 @@
 /**
  ******************************************************************************
- * @file 		glenn_exti.h
- * @author 		Glenn Pallad
+ * @file 		wulfric_nvic.c
+ * @author 		Wulfric Lee
  * @version 	V0.8.0_Alpha
  * @date 		August 30, 2018
- * @brief 		This file is header of glenn_exti.c.
+ * @brief 		This file is NVIC driver.
  ******************************************************************************
  * @attention
  *
@@ -28,15 +28,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * <h2><center>COPYRIGHT &copy; 2018 GLENN PALLAD </center></h2>
+ * <h2><center>COPYRIGHT &copy; 2018 WULFRIC LEE </center></h2>
  ******************************************************************************
  */
 
-#ifndef GLENN_EXTI_H
-#define GLENN_EXTI_H
+#include "wulfric_nvic.h"
 
-#include "stm32f10x.h"
-
-void EXTI_Configuration(void);
-
-#endif
+/**
+ * @brief This is a setting example, where EXTI0_IRQn, EXTI15_10_IRQn were
+ * 		enabled, modify this to meet your needs.
+ * 		Find all NVIC_IRQChannel in stm32f10x.h.
+ * 		Define your Handlers in stm32f10x_it.c.
+ */
+void NVIC_Configuration(void){
+	NVIC_InitTypeDef NVIC_InitStructure;
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
+	NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_Init(&NVIC_InitStructure);
+	NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn;
+	NVIC_Init(&NVIC_InitStructure);
+}

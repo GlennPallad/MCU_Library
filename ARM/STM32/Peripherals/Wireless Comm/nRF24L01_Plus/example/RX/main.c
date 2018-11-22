@@ -7,12 +7,12 @@
 #include "queue.h"
 
 /* Peripherals includes. */
-#include "glenn_rcc.h"
-#include "glenn_gpio.h"
-#include "glenn_nvic.h"
-#include "glenn_usart.h"
-#include "glenn_spi.h"
-#include "glenn_exti.h"
+#include "wulfric_rcc.h"
+#include "wulfric_gpio.h"
+#include "wulfric_nvic.h"
+#include "wulfric_usart.h"
+#include "wulfric_spi.h"
+#include "wulfric_exti.h"
 #include "led_pc13.h"
 #include "nrf24l01p.h"
 

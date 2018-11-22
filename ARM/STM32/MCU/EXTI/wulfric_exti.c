@@ -1,10 +1,10 @@
 /**
  ******************************************************************************
- * @file 		glenn_nvic.h
- * @author 		Glenn Pallad
+ * @file 		wulfric_exti.c
+ * @author 		Wulfric Lee
  * @version 	V0.8.0_Alpha
  * @date 		August 30, 2018
- * @brief 		This file is header of glenn_nvic.c.
+ * @brief 		This file is EXTI driver.
  ******************************************************************************
  * @attention
  *
@@ -28,15 +28,38 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * <h2><center>COPYRIGHT &copy; 2018 GLENN PALLAD </center></h2>
+ * <h2><center>COPYRIGHT &copy; 2018 WULFRIC LEE </center></h2>
  ******************************************************************************
  */
 
-#ifndef GLENN_NVIC_H
-#define GLENN_NVIC_H
+#include "wulfric_exti.h"
 
-#include "stm32f10x.h"
-
-void NVIC_Configuration(void);
-
-#endif
+/**
+ * @brief This is a setting example, where 
+ * 		GPIOA Pin 0 were attached to EXTI_Line0, 
+ * 		GPIOC Pin 13 were attached to EXTI_Line13, 
+ * 		modify this to meet your needs.
+ *		Maximum 16(0..15）EXTIs supported simultaneously.
+ *		Use
+ * 			EXTI_GetITStatus(EXTI_Linex)
+ *		in Handlers to detect which EXTI_Line was triggered.
+ * 		Use
+ *			EXTI_ClearITPendingBit(EXTI_Linex)
+ *		in Handlers to Clear EXTI_Line bit when Handler is finished.
+ *		where x can be (0..15).
+ */
+void EXTI_Configuration(void){
+	EXTI_InitTypeDef EXTI_InitStructure;
+	// KEY1
+	EXTI_InitStructure.EXTI_Line = EXTI_Line0;
+	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+	EXTI_Init(&EXTI_InitStructure);
+	// KEY2
+	EXTI_InitStructure.EXTI_Line = EXTI_Line13;
+	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+	EXTI_Init(&EXTI_InitStructure);
+}
