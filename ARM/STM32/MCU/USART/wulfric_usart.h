@@ -1,10 +1,10 @@
 /**
  ******************************************************************************
- * @file 		wulfirc_usart.h
+ * @file 		wulfric_usart.h
  * @author 		Wulfric Lee
  * @version 	V0.8.0_Alpha
  * @date 		August 28, 2018
- * @brief 		This header file of wulfirc_usart.c.
+ * @brief 		This header file of wulfric_usart.c.
  ******************************************************************************
  * @attention
  *
@@ -28,12 +28,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * <h2><center>COPYRIGHT &copy; 2018 WULFIRC LEE </center></h2>
+ * <h2><center>COPYRIGHT &copy; 2018 WULFRIC LEE </center></h2>
  ******************************************************************************
  */
 
-#ifndef WULFIRC_USART_H
-#define WULFIRC_USART_H
+#ifndef WULFRIC_USART_H
+#define WULFRIC_USART_H
 
 #include "stm32f10x.h"
 

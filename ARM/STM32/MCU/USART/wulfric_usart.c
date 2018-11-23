@@ -1,6 +1,6 @@
 /**
  ******************************************************************************
- * @file 		wulfirc_usart.c
+ * @file 		wulfric_usart.c
  * @author 		Wulfric Lee
  * @version 	V0.8.0_Alpha
  * @date 		August 28, 2018
@@ -33,7 +33,7 @@
  ******************************************************************************
  */
 
-#include "wulfirc_usart.h"
+#include "wulfric_usart.h"
 
 /**
  * @brief Configure mode of USART1.
