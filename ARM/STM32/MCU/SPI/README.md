@@ -1,7 +1,7 @@
 # Example
 ## Read DeviceID from W25Q64(Flash)
-*main.c*
 
+*main.c* <br>
 ```C
 #include "wulfric_rcc.h"
 #include "wulfric_gpio.h"
@@ -31,9 +31,7 @@ int main(int argc, char const *argv[])
 
 ```
 
-<br>
-*wulfric_rcc.c*
-
+*wulfric_rcc.c* <br>
 ```C
 #include "wulfric_rcc.h"
 
@@ -47,9 +45,7 @@ void RCC_Configuration(void){
 
 ```
 
-<br>
-*wulfric_gpio.c*
-
+*wulfric_gpio.c* <br>
 ```C
 #include "wulfric_gpio.h"
 #include "wulfric_spi.h"
@@ -84,9 +80,7 @@ void GPIO_Configuration(void){
 
 ```
 
-<br>
-*wulfric_nvic.c*
-
+*wulfric_nvic.c* <br>
 ```C
 #include "wulfric_nvic.h"
 
@@ -108,9 +102,7 @@ void NVIC_Configuration(void){
 
 ```
 
-<br>
-*wulfric_spi.c*
-
+*wulfric_spi.c* <br>
 ```C
 #include "wulfric_spi.h"
 
@@ -179,9 +171,7 @@ uint8_t SPI1_Timeout_Soft_Handler(void){
 
 ```
 
-<br>
-*W25Q64.c*
-
+*W25Q64.c*  <br>
 ```C
 #include "W25Q64.h"
 
