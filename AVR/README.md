@@ -1,1 +1,1 @@
-This directory contains all MCU libs based on AVR architecture(Unfinished).
+The preparation of the AVR library is temporarily not considered.
